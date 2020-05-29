@@ -1,33 +1,39 @@
 import { logger } from "./export";
 
 /*Scenario 1*/
-const obj = {
-	Object: function() {
-		logger();
+(function () {
+	const obj = {
+		Object: function() {
+			logger();
+		}
+	};
+
+	obj.Object();
+}());
+
+/* Produces:
+var obj = {
+	Object: function Object() {
+		Object(_export__WEBPACK_IMPORTED_MODULE_0__["logger"])();
 	}
 };
 
 obj.Object();
-
-/* Produces:
-const obj = {
-    Object: function () {
-        Object(_export__WEBPACK_IMPORTED_MODULE_0__["logger"])();
-    }
-};
-obj.Object();
 */
 
 /*Scenario 2*/
-function Object() {
-	logger();
-}
+(function () {
+	function Object() {
+		logger();
+	}
 
-Object();
+	Object();
+}())
 
 /* Produces:
 function Object() {
-    Object(_export__WEBPACK_IMPORTED_MODULE_0__["logger"])();
+	Object(_export__WEBPACK_IMPORTED_MODULE_0__["logger"])();
 }
+
 Object();
 */

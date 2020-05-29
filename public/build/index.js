@@ -97,9 +97,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logger", function() { return logger; });
 function logger() {
-    alert("Logger called");
+  alert("Logger called");
 }
-
 
 /***/ }),
 
@@ -115,32 +114,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _export__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./export */ "./src/export.ts");
 
 /*Scenario 1*/
-const obj = {
-    Object: function () {
-        Object(_export__WEBPACK_IMPORTED_MODULE_0__["logger"])();
+
+(function () {
+  var obj = {
+    Object: function Object() {
+      Object(_export__WEBPACK_IMPORTED_MODULE_0__["logger"])();
     }
-};
-obj.Object();
+  };
+  obj.Object();
+})();
 /* Produces:
-const obj = {
-    Object: function () {
-        Object(_export__WEBPACK_IMPORTED_MODULE_0__["logger"])();
-    }
+var obj = {
+	Object: function Object() {
+		Object(_export__WEBPACK_IMPORTED_MODULE_0__["logger"])();
+	}
 };
+
 obj.Object();
 */
+
 /*Scenario 2*/
-function Object() {
+
+
+(function () {
+  function Object() {
     Object(_export__WEBPACK_IMPORTED_MODULE_0__["logger"])();
-}
-Object();
+  }
+
+  Object();
+})();
 /* Produces:
 function Object() {
-    Object(_export__WEBPACK_IMPORTED_MODULE_0__["logger"])();
+	Object(_export__WEBPACK_IMPORTED_MODULE_0__["logger"])();
 }
-Object();
-*/ 
 
+Object();
+*/
 
 /***/ })
 
